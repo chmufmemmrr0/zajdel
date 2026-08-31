@@ -15,6 +15,10 @@ export default function Reveal({ children }: RevealProps) {
             return;
         }
 
+        const getThreshold = () => {
+            return window.innerWidth < 640 ? 0.15 : 0.35;
+        };
+
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
@@ -22,7 +26,7 @@ export default function Reveal({ children }: RevealProps) {
                     observer.disconnect();
                 }
             },
-            { threshold: 0.35 },
+            { threshold: getThreshold() },
         );
 
         observer.observe(element);

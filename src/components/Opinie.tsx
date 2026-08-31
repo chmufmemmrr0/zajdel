@@ -62,7 +62,7 @@ export default function Opinie() {
                             {visibleReviews.map((review, index) => (
                                 <article
                                     key={`${review.author}-${index}-${activeIndex}`}
-                                    className="flex h-auto sm:h-[320px] flex-col justify-between rounded-[22px] bg-sectionColor/80 px-4 sm:px-8 py-6 sm:py-10 shadow-lg shadow-goldDark/50"
+                                    className={`flex h-auto sm:h-[320px] flex-col justify-between rounded-[22px] bg-sectionColor/80 px-4 sm:px-8 py-6 sm:py-10 shadow-lg shadow-goldDark/50 ${index > 0 ? "hidden sm:flex" : ""}`}
                                 >
                                     <div className="flex justify-center gap-2 text-goldDark">
                                         {[...Array(5)].map((_, starIndex) => (

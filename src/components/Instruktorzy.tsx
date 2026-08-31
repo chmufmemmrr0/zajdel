@@ -14,7 +14,9 @@ export default function Instruktorzy() {
                 </div>
                 <div className="mt-8 grid w-full gap-4 sm:gap-6 sm:grid-cols-2 xl:grid-cols-5">
                     {[1, 2, 3, 4].map((id) => (
-                        <InstruktorzyCard key={id} id={id} />
+                        <div key={id} className={id > 2 ? "hidden sm:block" : ""}>
+                            <InstruktorzyCard id={id} />
+                        </div>
                     ))}
                     <button 
                         onClick={() => setIsInstruktorzyPopupOpen(true)}

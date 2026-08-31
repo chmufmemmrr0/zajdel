@@ -140,23 +140,19 @@ export default function FaqKontakt() {
                                 </div>
                             </div>
 
-                            <div className="space-y-4 flex justify-center flex-col">
+                            <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-1">
                                 {contactItems.map(({ icon: Icon, value }) => (
                                     <div
                                         key={value}
-                                        className="flex items-start gap-3 sm:gap-4 px-3 sm:px-4 py-1"
+                                        className="flex flex-col items-start gap-2 sm:gap-3 px-2 sm:px-4 py-2"
                                     >
-                                        <div className="flex items-center justify-center text-[#b67b32] flex-shrink-0 mt-1">
+                                        <div className="flex items-center justify-center text-[#b67b32] flex-shrink-0">
                                             <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
                                         </div>
 
-                                        <div className="flex min-w-0 flex-1 items-center justify-between gap-3 sm:gap-4">
-                                            
-
-                                            <span className="whitespace-pre-line text-xs sm:text-lg leading-relaxed">
-                                                {value}
-                                            </span>
-                                        </div>
+                                        <span className="whitespace-pre-line text-xs sm:text-sm lg:text-lg leading-relaxed">
+                                            {value}
+                                        </span>
                                     </div>
                                 ))}
                             </div>
