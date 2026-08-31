@@ -8,6 +8,7 @@
 
 body {
   font-family: 'Outfit', sans-serif;
+  background-color: #f8f5f0;
 }
 
 .liquid-glass {
@@ -23,4 +24,15 @@ body {
 html, body {
   overscroll-behavior-x: none; /* Blokuje naciąganie na boki (lewo/prawo) */
   overscroll-behavior-y: none; 
+}
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
