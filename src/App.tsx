@@ -6,7 +6,7 @@ import CookiesBanner from './components/CookiesBanner';
 
 export default function App() {
   return (
-    <HashRouter basename="/zajdel">
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/polityka" element={<Polityka />} />
