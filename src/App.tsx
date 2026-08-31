@@ -6,7 +6,7 @@ import CookiesBanner from './components/CookiesBanner';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/zajdel">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/polityka" element={<Polityka />} />
