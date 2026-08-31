@@ -56,14 +56,14 @@ export default function FaqKontakt() {
     const mapUrl = `https://www.google.com/maps?q=${encodeURIComponent(mapQuery)}&output=embed`;
 
     return (
-        <section className="bg-sectionColor px-4 py-16 md:px-8 xl:px-16">
+        <section className="bg-sectionColor px-4 sm:px-6 py-12 sm:py-16 md:px-8 xl:px-16">
             <div className="mx-auto max-w-[1400px]">
-                <div className="grid gap-10 lg:grid-cols-[1fr_1.15fr]">
+                <div className="grid gap-6 sm:gap-10 lg:grid-cols-[1fr_1.15fr]">
                     <div>
-                        <p className="text-goldDark text-xl">FAQ</p>
-                        <p className="text-textColor text-2xl">Najczęściej zadawane pytania</p>
+                        <p className="text-goldDark text-lg sm:text-xl">FAQ</p>
+                        <p className="text-textColor text-xl sm:text-2xl">Najczęściej zadawane pytania</p>
 
-                        <div className="mt-8 space-y-4">
+                        <div className="mt-6 sm:mt-8 space-y-4">
                             {faqs.map((question, index) => {
                                 const isOpen = openIndex === index;
 
@@ -77,17 +77,17 @@ export default function FaqKontakt() {
                                         <button
                                             type="button"
                                             onClick={() => toggleFaq(index)}
-                                            className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left"
+                                            className="flex w-full items-center justify-between gap-3 sm:gap-4 px-4 sm:px-5 py-4 sm:py-5 text-left"
                                             aria-expanded={isOpen}
                                         >
-                                            <span className="text-lg leading-relaxed text-[#1d1c1b]">{question}</span>
+                                            <span className="text-sm sm:text-lg leading-relaxed text-[#1d1c1b]">{question}</span>
 
                                             <span
-                                                className={`flex h-8 w-8 items-center justify-center rounded-full border border-[#c8a979] text-[#c19959] transition-transform duration-300 ${
+                                                className={`flex h-6 w-6 sm:h-8 sm:w-8 items-center justify-center rounded-full border border-[#c8a979] text-[#c19959] transition-transform duration-300 flex-shrink-0 ${
                                                     isOpen ? "rotate-180" : "rotate-0"
                                                 }`}
                                             >
-                                                <ChevronDown className="h-4 w-4" />
+                                                <ChevronDown className="h-3 w-3 sm:h-4 sm:w-4" />
                                             </span>
                                         </button>
 
@@ -98,7 +98,7 @@ export default function FaqKontakt() {
                                             }}
                                         >
                                             <div className="overflow-hidden">
-                                                <p className="px-5 pb-5 text-base leading-relaxed text-[#4d4741]">{answers[index]}</p>
+                                                <p className="px-4 sm:px-5 pb-4 sm:pb-5 text-xs sm:text-base leading-relaxed text-[#4d4741]">{answers[index]}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -114,12 +114,12 @@ export default function FaqKontakt() {
                             aria-hidden="true"
                             className="absolute -left-5 top-0 hidden h-full w-px bg-[#e5ddd3] lg:block"
                         />
-                        <p className="text-goldDark text-xl">KONTAKT</p>
-                        <p className="text-textColor text-2xl">Odezwij się do nas</p>
+                        <p className="text-goldDark text-lg sm:text-xl">KONTAKT</p>
+                        <p className="text-textColor text-xl sm:text-2xl">Odezwij się do nas</p>
 
-                        <div className="mt-8 grid gap-6 xl:grid-cols-[1.1fr_1fr]">
+                        <div className="mt-6 sm:mt-8 grid gap-4 sm:gap-6 xl:grid-cols-[1.1fr_1fr]">
                             <div className="overflow-hidden rounded-[22px] border border-[#e0d3bf] bg-[#f4efe9] p-2 shadow-[0_10px_30px_rgba(56,48,36,0.05)]">
-                                <div className="relative h-[340px] overflow-hidden rounded-[18px] bg-[#efe7dc]">
+                                <div className="relative h-64 sm:h-80 lg:h-[340px] overflow-hidden rounded-[18px] bg-[#efe7dc]">
                                     {cookieConsent === "accepted" ? (
                                         <iframe
                                             title="Mapa lokalizacji"
@@ -131,9 +131,9 @@ export default function FaqKontakt() {
                                     ) : (
                                         <div className="h-full w-full flex items-center justify-center bg-[#f1ede8]">
                                             <div className="text-center px-4">
-                                                <MapPin className="h-12 w-12 text-[#c9a46a] mx-auto mb-2" />
-                                                <p className="text-textColor font-medium mb-1">Mapa jest niedostępna</p>
-                                                <p className="text-sm text-[#6d665f]">Zaakceptuj cookies, aby zobaczyć naszą lokalizację</p>
+                                                <MapPin className="h-8 w-8 sm:h-12 sm:w-12 text-[#c9a46a] mx-auto mb-2" />
+                                                <p className="text-textColor font-medium mb-1 text-sm sm:text-base">Mapa jest niedostępna</p>
+                                                <p className="text-xs sm:text-sm text-[#6d665f]">Zaakceptuj cookies, aby zobaczyć naszą lokalizację</p>
                                             </div>
                                         </div>
                                     )}
@@ -144,16 +144,16 @@ export default function FaqKontakt() {
                                 {contactItems.map(({ icon: Icon, value }) => (
                                     <div
                                         key={value}
-                                        className="flex items-center gap-4 px-4 py-1"
+                                        className="flex items-start gap-3 sm:gap-4 px-3 sm:px-4 py-1"
                                     >
-                                        <div className="flex items-center justify-center text-[#b67b32]">
-                                            <Icon className="h-6 w-6" />
+                                        <div className="flex items-center justify-center text-[#b67b32] flex-shrink-0 mt-1">
+                                            <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
                                         </div>
 
-                                        <div className="flex min-w-0 flex-1 items-center justify-between gap-4">
+                                        <div className="flex min-w-0 flex-1 items-center justify-between gap-3 sm:gap-4">
                                             
 
-                                            <span className="whitespace-pre-line text-lg">
+                                            <span className="whitespace-pre-line text-xs sm:text-lg leading-relaxed">
                                                 {value}
                                             </span>
                                         </div>

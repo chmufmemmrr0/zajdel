@@ -11,7 +11,7 @@ import Reveal from "../components/Reveal";
 
 export default function Home() {
   return (
-    <div className="h-[200vh]">
+    <div className="w-full">
       <Reveal><LandingBanner /></Reveal>
       <Reveal><NaszaOferta /></Reveal>
       <Reveal><ONas /></Reveal>

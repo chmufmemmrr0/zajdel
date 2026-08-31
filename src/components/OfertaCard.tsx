@@ -31,13 +31,13 @@ export default function OfertaCard({id}: {id: number}) {
 
     return (
         <>
-            <div className="w-[15vw] h-[50vh] bg-sectionColor flex flex-col items-center justify-center rounded-xl text-center shadow-lg shadow-goldDark/50 hover:scale-105 duration-150 cursor-pointer" onClick={() => setIsOfferPopupOpen(true)}>
-                <div className="rounded-full bg-mainBackground shadow-lg shadow-goldLight/50 w-1/2 aspect-square">
-                    <Icon className="w-full h-full p-8 text-goldDark" />
+            <div className="w-full h-64 sm:h-80 lg:h-[50vh] bg-sectionColor flex flex-col items-center justify-center rounded-xl text-center shadow-lg shadow-goldDark/50 hover:scale-105 duration-150 cursor-pointer" onClick={() => setIsOfferPopupOpen(true)}>
+                <div className="rounded-full bg-mainBackground shadow-lg shadow-goldLight/50 w-12 h-12 sm:w-16 sm:h-16 lg:w-1/2 lg:aspect-square flex items-center justify-center">
+                    <Icon className="w-8 h-8 sm:w-10 sm:h-10 lg:w-full lg:h-full lg:p-8 text-goldDark" />
                 </div>
-                <h3 className="mt-8 font-medium text-xl">{name}</h3>
-                <p className="w-3/4 mt-4">{description}</p>
-                <p className="text-goldDark mt-16">DOWIEDZ SIĘ WIĘCEJ <ArrowRightIcon className="inline-block ml-2" /></p>
+                <h3 className="mt-3 sm:mt-6 lg:mt-8 font-medium text-base sm:text-lg lg:text-xl">{name}</h3>
+                <p className="w-4/5 mt-2 sm:mt-3 lg:mt-4 text-xs sm:text-sm">{description}</p>
+                <p className="text-goldDark mt-2 sm:mt-4 lg:mt-16 text-xs sm:text-sm">DOWIEDZ SIĘ WIĘCEJ <ArrowRightIcon className="inline-block ml-1 size-3 sm:size-4" /></p>
             </div>
 
             {isOfferPopupOpen && (

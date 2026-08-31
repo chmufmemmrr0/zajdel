@@ -42,42 +42,42 @@ export default function Opinie() {
     };
 
     return (
-        <section className="bg-mainBackground py-16 px-6" id="opinie">
+        <section className="bg-mainBackground py-12 sm:py-16 px-4 sm:px-6" id="opinie">
             <div className="mx-auto max-w-[1400px] text-center">
-                <p className="text-goldDark text-xl">OPINIE</p>
-                <p className="text-textColor text-2xl">Co mówią o nas uczniowie?</p>
+                <p className="text-goldDark text-lg sm:text-xl">OPINIE</p>
+                <p className="text-textColor text-xl sm:text-2xl">Co mówią o nas uczniowie?</p>
 
-                <div className="flex items-center justify-center gap-8">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-8">
                     <button
                         type="button"
                         aria-label="Poprzednia opinia"
                         onClick={goToPrevious}
-                        className="flex h-16 w-16 items-center justify-center rounded-full border-[2px] border-goldDark bg-transparent text-goldDark transition-colors duration-200 hover:bg-goldDark/10"
+                        className="flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full border-[2px] border-goldDark bg-transparent text-goldDark transition-colors duration-200 hover:bg-goldDark/10 flex-shrink-0"
                     >
-                        <ArrowLeft className="h-5 w-5" />
+                        <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5" />
                     </button>
 
                     <div className="relative w-full max-w-[1180px] overflow-hidden">
-                        <div className="grid gap-8 lg:grid-cols-3 p-8">
+                        <div className="grid gap-4 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-4 sm:p-8">
                             {visibleReviews.map((review, index) => (
                                 <article
                                     key={`${review.author}-${index}-${activeIndex}`}
-                                    className="flex h-[320px] flex-col justify-between rounded-[22px] bg-sectionColor/80 px-8 py-10 shadow-lg shadow-goldDark/50"
+                                    className="flex h-auto sm:h-[320px] flex-col justify-between rounded-[22px] bg-sectionColor/80 px-4 sm:px-8 py-6 sm:py-10 shadow-lg shadow-goldDark/50"
                                 >
                                     <div className="flex justify-center gap-2 text-goldDark">
                                         {[...Array(5)].map((_, starIndex) => (
                                             <Star
                                                 key={`${review.author}-${index}-${starIndex}-${activeIndex}`}
-                                                className="h-5 w-5 fill-goldDark text-goldDark"
+                                                className="h-4 w-4 sm:h-5 sm:w-5 fill-goldDark text-goldDark"
                                             />
                                         ))}
                                     </div>
 
-                                    <p className="mt-8 text-center text-[1.05rem] leading-relaxed text-textColor/90">
+                                    <p className="mt-4 sm:mt-8 text-center text-sm sm:text-[1.05rem] leading-relaxed text-textColor/90">
                                         {review.quote}
                                     </p>
 
-                                    <div className="mt-8 text-center text-base italic text-textColor/90">
+                                    <div className="mt-4 sm:mt-8 text-center text-xs sm:text-base italic text-textColor/90">
                                         — {review.author}
                                     </div>
                                 </article>
@@ -89,17 +89,17 @@ export default function Opinie() {
                         type="button"
                         aria-label="Następna opinia"
                         onClick={goToNext}
-                        className="flex h-16 w-16 items-center justify-center rounded-full border-[2px] border-goldDark bg-transparent text-goldDark transition-colors duration-200 hover:bg-goldDark/10"
+                        className="flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full border-[2px] border-goldDark bg-transparent text-goldDark transition-colors duration-200 hover:bg-goldDark/10 flex-shrink-0"
                     >
-                        <ArrowRight className="h-5 w-5" />
+                        <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
                     </button>
                 </div>
 
-                <div className="flex justify-center gap-3">
+                <div className="flex justify-center gap-3 mt-6">
                     {REVIEWS.map((review, index) => (
                         <span
                             key={review.author}
-                            className={`h-3 w-3 rounded-full ${index === activeIndex ? "bg-goldDark" : "bg-goldDark/30"}`}
+                            className={`h-2 w-2 sm:h-3 sm:w-3 rounded-full ${index === activeIndex ? "bg-goldDark" : "bg-goldDark/30"}`}
                         />
                     ))}
                 </div>

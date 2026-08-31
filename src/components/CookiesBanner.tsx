@@ -42,12 +42,12 @@ export default function CookiesBanner() {
 
     return (
         <div className="fixed bottom-0 left-0 right-0 z-50 bg-sectionColor border-t border-[#e9e0d5] shadow-lg">
-            <div className="mx-auto max-w-[1800px] px-8 py-6">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                    <div className="flex-1">
-                        <div className="flex items-start gap-3">
+            <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div className="flex-1 min-w-0">
+                        <div className="flex flex-col gap-3">
                             <div className="flex-1">
-                                <h3 className="text-sm font-semibold text-textColor mb-1">
+                                <h3 className="text-xs sm:text-sm font-semibold text-textColor mb-1">
                                     Pliki Cookies
                                 </h3>
                                 <p className="text-xs text-[#6d665f] leading-relaxed">
@@ -68,16 +68,16 @@ export default function CookiesBanner() {
                         </div>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row gap-2 md:gap-3 shrink-0">
+                    <div className="flex flex-col xs:flex-row gap-2 shrink-0">
                         <button
                             onClick={handleDecline}
-                            className="px-4 py-2 text-xs font-medium text-textColor bg-transparent border border-goldDark rounded-lg hover:bg-[#f1e5d3] transition-colors duration-150"
+                            className="px-3 sm:px-4 py-2 text-xs font-medium text-textColor bg-transparent border border-goldDark rounded-lg hover:bg-[#f1e5d3] transition-colors duration-150 whitespace-nowrap"
                         >
                             Odrzuć
                         </button>
                         <button
                             onClick={handleAccept}
-                            className="px-4 py-2 text-xs font-medium text-mainBackground bg-goldDark rounded-lg hover:bg-[#b3934f] transition-colors duration-150"
+                            className="px-3 sm:px-4 py-2 text-xs font-medium text-mainBackground bg-goldDark rounded-lg hover:bg-[#b3934f] transition-colors duration-150 whitespace-nowrap"
                         >
                             Akceptuję wszystkie
                         </button>
@@ -86,9 +86,9 @@ export default function CookiesBanner() {
                     <button
                         onClick={handleClose}
                         aria-label="Zamknij"
-                        className="absolute top-3 right-3 md:static text-[#6d665f] hover:text-textColor transition-colors"
+                        className="absolute top-2 right-2 sm:relative sm:top-auto sm:right-auto text-[#6d665f] hover:text-textColor transition-colors flex-shrink-0"
                     >
-                        <X className="w-5 h-5" />
+                        <X className="w-4 h-4 sm:w-5 sm:h-5" />
                     </button>
                 </div>
             </div>

@@ -21,14 +21,14 @@ export default function Galeria() {
     const previewPhotos = galleryPhotos.slice(0, 6);
 
     return (
-        <div className="flex flex-col items-center justify-center py-8 bg-sectionColor w-screen h-fit" id="galeria">
-            <p className="text-goldDark text-xl">GALERIA</p>
-            <p className="text-textColor text-2xl">Zobacz, jak uczymy i tworzymy muzykę</p>
-            <div className="my-8 flex w-full justify-center px-6 flex-row items-stretch gap-6">
+        <div className="flex flex-col items-center justify-center py-8 px-4 sm:px-6 bg-sectionColor w-full h-fit" id="galeria">
+            <p className="text-goldDark text-lg sm:text-xl">GALERIA</p>
+            <p className="text-textColor text-xl sm:text-2xl text-center">Zobacz, jak uczymy i tworzymy muzykę</p>
+            <div className="my-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 w-full justify-center px-2 sm:px-6 items-stretch gap-3 sm:gap-6 max-w-6xl mx-auto">
                 {previewPhotos.map((url) => (
                     <div
                         key={url}
-                        className="w-1/3 h-[200px] bg-cover bg-center rounded-2xl"
+                        className="w-full h-32 sm:h-48 lg:h-[200px] bg-cover bg-center rounded-2xl"
                         style={{ backgroundImage: `url(${url})` }}
                     />
                 ))}
@@ -36,7 +36,7 @@ export default function Galeria() {
             <button
                 type="button"
                 onClick={() => setIsGalleryPopupOpen(true)}
-                className="bg-goldDark text-mainBackground py-2 px-8 rounded-xl h-fit w-fit m-auto"
+                className="bg-goldDark text-mainBackground py-2 px-6 sm:px-8 rounded-xl h-fit w-fit m-auto text-sm sm:text-base"
             >
                 ZOBACZ WIĘCEJ ZDJĘĆ
             </button>
